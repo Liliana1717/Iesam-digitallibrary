@@ -3,31 +3,31 @@ import java.util.ArrayList;
 import java.util.List;
 public class ModifyUserUseCase {
 
-    public User users;
 
+    private List<User> users;
 
-    public ModifyUserUseCase (UserRepository userrepository) {
-List<User> users;
-users = new ArrayList<>();
+    public ModifyUserUseCase(UserRepository userRepository) {
+        this.users = new ArrayList<>();
+        // Load users from the repository if needed
+        // this.users = userRepository.findAll(); // Uncomment and implement this line as necessary
+    }
 
+    public String addNewUser(User user) {
+        users.add(user);
+        return "Usuario dado de alta con éxito";
+    }
+
+    public String modifyUser(String userId, String newId, String newName, String newEmail, String newAddress) {
+        for (User user : users) {
+            if (user.getId().equals(userId)) { // Use .equals for string comparison
+                user.setId(newId);
+                user.setName(newName);
+                user.setEmail(newEmail);
+                user.setAddress(newAddress);
+                return "Datos del usuario modificados exitosamente";
+            }
         }
- public String NewUser(User users) {
-     users.add(users);
+        return "Usuario no encontrado";
+    }
 
-    return "usuario dado de alta con exito";
 }
-
-public Object modifyUser(String newId, String newName, String newEmail, String newAddress) {
-
-    for (User us : users){
-        if (us.getId() == userId) {
-            us.setName(newName);
-            us.setId(newId);
-            us.setAddress(newAddress);
-            return "datos del usuario modificado exitosamente";
-
-        }
-
-} return "usuario no encotrado";
-
-}}
