@@ -8,8 +8,7 @@ public class ModifyUserUseCase {
 
     public ModifyUserUseCase(UserRepository userRepository) {
         this.users = new ArrayList<>();
-        // Load users from the repository if needed
-        // this.users = userRepository.findAll(); // Uncomment and implement this line as necessary
+
     }
 
     public String addNewUser(User user) {
