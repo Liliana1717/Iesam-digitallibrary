@@ -1,6 +1,6 @@
 package org.com.iesam.digitallibrary.domain;
 
-public class loan {
+public class Loan {
     public Integer bookId;
     public String userId;
 
@@ -8,7 +8,7 @@ public class loan {
     public Integer loanId;
 public String returnDate;
 
-    public loan(Integer bookId, String userId, String loanDate, Integer loanId, String returnDate) {
+    public Loan(Integer bookId, String userId, String loanDate, Integer loanId, String returnDate) {
         this.bookId = bookId;
         this.userId = userId;
         this.loanDate = loanDate;
